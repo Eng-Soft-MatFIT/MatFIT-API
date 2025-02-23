@@ -1,8 +1,8 @@
 spring:
     datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: ${DB_USER:root}
-        url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:mat_fit}
+        driver-class-name: org.postgresql.Driver
+        username: ${DB_USER:postgres}
+        url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:mat_fit}
         password: ${DB_PASSWORD:12345}
     output:
         ansi:
@@ -10,3 +10,6 @@ spring:
     jpa:
         hibernate:
             ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
